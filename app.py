@@ -1,13 +1,9 @@
-from flask import Flask, render_template, url_for, request, redirect
-from flask_sqlalchemy import SQLAlchemy
+from flask import render_template, url_for, request, redirect
+from flaskapp import *
 from datetime import datetime
 
 
 
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog1.db'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-db = SQLAlchemy(app)
 
 
 @app.route('/')
@@ -93,7 +89,7 @@ class Article(db.Model):
     date = db.Column(db.DateTime, default=datetime.utcnow)
 
     def __repr__(self):
-        return f"<Article %r>" % self.id
+        return f"<Article % {self.id}>"
 
 
 
