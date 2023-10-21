@@ -1,13 +1,5 @@
-from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
+from flaskapp import *
 from datetime import datetime
-
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog4.db'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-db = SQLAlchemy(app)
-app.secret_key = 'my_secret_key'
-
 
 
 class User(db.Model):
