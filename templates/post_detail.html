@@ -12,8 +12,12 @@
         <h4>{{post.text}}</h4>
         <hr>
         <p><b>Date: {{post.date.date() }}</b></p>
+        {% if session.authenticated %}
+            {% if session.id == post.user_id %}
         <a href="/posts/{{post.id}}/del" class="btn btn-danger">Delete</a>
         <a href="/posts/{{post.id}}/update" class="btn btn-warning">Update</a>
+             {% endif %}
+        {% endif %}
     </div>
 </div>
 

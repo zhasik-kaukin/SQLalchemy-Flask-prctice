@@ -119,7 +119,7 @@ def create():
 def posts():
     if 'id' in session:
         user_id = session['id']
-        articles = Article.query.filter_by(user_id=user_id).order_by(Article.date.desc()).all()
+        articles = Article.query.order_by(Article.date.desc()).all()
         return render_template('posts.html', posts=articles)
     else:
         return redirect('/login')
